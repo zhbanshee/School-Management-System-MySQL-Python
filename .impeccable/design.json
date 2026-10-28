@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-28T18:26:53.847518+00:00",
+  "title": "Design System: Schoolhouse",
+  "extensions": {
+    "colorMeta": {
+      "pine": {
+        "role": "primary",
+        "displayName": "Pine",
+        "tonalRamp": [
+          "oklch(15% 0.0165 175.82)",
+          "oklch(27% 0.0307 175.82)",
+          "oklch(39% 0.0401 175.82)",
+          "oklch(51% 0.0472 175.82)",
+          "oklch(63% 0.0472 175.82)",
+          "oklch(75% 0.0377 175.82)",
+          "oklch(87% 0.0236 175.82)",
+          "oklch(95% 0.0094 175.82)"
+        ]
+      },
+      "green": {
+        "role": "primary",
+        "displayName": "Green",
+        "tonalRamp": [
+          "oklch(15% 0.0205 168.86)",
+          "oklch(27% 0.0381 168.86)",
+          "oklch(39% 0.0499 168.86)",
+          "oklch(51% 0.0587 168.86)",
+          "oklch(63% 0.0587 168.86)",
+          "oklch(75% 0.0469 168.86)",
+          "oklch(87% 0.0293 168.86)",
+          "oklch(95% 0.0117 168.86)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(15% 0.0023 115.70)",
+          "oklch(27% 0.0043 115.70)",
+          "oklch(39% 0.0057 115.70)",
+          "oklch(51% 0.0067 115.70)",
+          "oklch(63% 0.0067 115.70)",
+          "oklch(75% 0.0053 115.70)",
+          "oklch(87% 0.0033 115.70)",
+          "oklch(95% 0.0013 115.70)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0117 171.20)",
+          "oklch(27% 0.0217 171.20)",
+          "oklch(39% 0.0283 171.20)",
+          "oklch(51% 0.0333 171.20)",
+          "oklch(63% 0.0333 171.20)",
+          "oklch(75% 0.0267 171.20)",
+          "oklch(87% 0.0167 171.20)",
+          "oklch(95% 0.0067 171.20)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.0054 152.36)",
+          "oklch(27% 0.0099 152.36)",
+          "oklch(39% 0.0130 152.36)",
+          "oklch(51% 0.0153 152.36)",
+          "oklch(63% 0.0153 152.36)",
+          "oklch(75% 0.0122 152.36)",
+          "oklch(87% 0.0077 152.36)",
+          "oklch(95% 0.0031 152.36)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15% 0.0039 123.47)",
+          "oklch(27% 0.0072 123.47)",
+          "oklch(39% 0.0095 123.47)",
+          "oklch(51% 0.0111 123.47)",
+          "oklch(63% 0.0111 123.47)",
+          "oklch(75% 0.0089 123.47)",
+          "oklch(87% 0.0056 123.47)",
+          "oklch(95% 0.0022 123.47)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(27% 0.0000 89.88)",
+          "oklch(39% 0.0000 89.88)",
+          "oklch(51% 0.0000 89.88)",
+          "oklch(63% 0.0000 89.88)",
+          "oklch(75% 0.0000 89.88)",
+          "oklch(87% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "selected-nav": {
+        "role": "secondary",
+        "displayName": "Selected Nav",
+        "tonalRamp": [
+          "oklch(15% 0.0147 120.39)",
+          "oklch(27% 0.0274 120.39)",
+          "oklch(39% 0.0358 120.39)",
+          "oklch(51% 0.0421 120.39)",
+          "oklch(63% 0.0421 120.39)",
+          "oklch(75% 0.0337 120.39)",
+          "oklch(87% 0.0211 120.39)",
+          "oklch(95% 0.0084 120.39)"
+        ]
+      },
+      "welcome": {
+        "role": "secondary",
+        "displayName": "Welcome",
+        "tonalRamp": [
+          "oklch(15% 0.0076 118.23)",
+          "oklch(27% 0.0141 118.23)",
+          "oklch(39% 0.0184 118.23)",
+          "oklch(51% 0.0216 118.23)",
+          "oklch(63% 0.0216 118.23)",
+          "oklch(75% 0.0173 118.23)",
+          "oklch(87% 0.0108 118.23)",
+          "oklch(95% 0.0043 118.23)"
+        ]
+      },
+      "present-bg": {
+        "role": "semantic",
+        "displayName": "Present Bg",
+        "tonalRamp": [
+          "oklch(15% 0.0066 130.18)",
+          "oklch(27% 0.0122 130.18)",
+          "oklch(39% 0.0159 130.18)",
+          "oklch(51% 0.0187 130.18)",
+          "oklch(63% 0.0187 130.18)",
+          "oklch(75% 0.0150 130.18)",
+          "oklch(87% 0.0094 130.18)",
+          "oklch(95% 0.0037 130.18)"
+        ]
+      },
+      "present-text": {
+        "role": "semantic",
+        "displayName": "Present Text",
+        "tonalRamp": [
+          "oklch(15% 0.0295 140.68)",
+          "oklch(27% 0.0549 140.68)",
+          "oklch(39% 0.0717 140.68)",
+          "oklch(51% 0.0844 140.68)",
+          "oklch(63% 0.0844 140.68)",
+          "oklch(75% 0.0675 140.68)",
+          "oklch(87% 0.0422 140.68)",
+          "oklch(95% 0.0169 140.68)"
+        ]
+      },
+      "late-bg": {
+        "role": "semantic",
+        "displayName": "Late Bg",
+        "tonalRamp": [
+          "oklch(15% 0.0090 84.59)",
+          "oklch(27% 0.0167 84.59)",
+          "oklch(39% 0.0218 84.59)",
+          "oklch(51% 0.0256 84.59)",
+          "oklch(63% 0.0256 84.59)",
+          "oklch(75% 0.0205 84.59)",
+          "oklch(87% 0.0128 84.59)",
+          "oklch(95% 0.0051 84.59)"
+        ]
+      },
+      "late-text": {
+        "role": "semantic",
+        "displayName": "Late Text",
+        "tonalRamp": [
+          "oklch(15% 0.0307 83.47)",
+          "oklch(27% 0.0570 83.47)",
+          "oklch(39% 0.0746 83.47)",
+          "oklch(51% 0.0878 83.47)",
+          "oklch(63% 0.0878 83.47)",
+          "oklch(75% 0.0702 83.47)",
+          "oklch(87% 0.0439 83.47)",
+          "oklch(95% 0.0176 83.47)"
+        ]
+      },
+      "absent-bg": {
+        "role": "semantic",
+        "displayName": "Absent Bg",
+        "tonalRamp": [
+          "oklch(15% 0.0060 44.80)",
+          "oklch(27% 0.0112 44.80)",
+          "oklch(39% 0.0147 44.80)",
+          "oklch(51% 0.0173 44.80)",
+          "oklch(63% 0.0173 44.80)",
+          "oklch(75% 0.0138 44.80)",
+          "oklch(87% 0.0086 44.80)",
+          "oklch(95% 0.0035 44.80)"
+        ]
+      },
+      "absent-text": {
+        "role": "semantic",
+        "displayName": "Absent Text",
+        "tonalRamp": [
+          "oklch(15% 0.0402 34.90)",
+          "oklch(27% 0.0747 34.90)",
+          "oklch(39% 0.0977 34.90)",
+          "oklch(51% 0.1149 34.90)",
+          "oklch(63% 0.1149 34.90)",
+          "oklch(75% 0.0919 34.90)",
+          "oklch(87% 0.0574 34.90)",
+          "oklch(95% 0.0230 34.90)"
+        ]
+      },
+      "focus": {
+        "role": "semantic",
+        "displayName": "Focus",
+        "tonalRamp": [
+          "oklch(15% 0.0433 121.30)",
+          "oklch(27% 0.0804 121.30)",
+          "oklch(39% 0.1052 121.30)",
+          "oklch(51% 0.1237 121.30)",
+          "oklch(63% 0.1237 121.30)",
+          "oklch(75% 0.0990 121.30)",
+          "oklch(87% 0.0619 121.30)",
+          "oklch(95% 0.0247 121.30)"
+        ]
+      },
+      "danger": {
+        "role": "semantic",
+        "displayName": "Danger",
+        "tonalRamp": [
+          "oklch(15% 0.0418 35.45)",
+          "oklch(27% 0.0776 35.45)",
+          "oklch(39% 0.1015 35.45)",
+          "oklch(51% 0.1194 35.45)",
+          "oklch(63% 0.1194 35.45)",
+          "oklch(75% 0.0955 35.45)",
+          "oklch(87% 0.0597 35.45)",
+          "oklch(95% 0.0239 35.45)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page orientation and welcome headings."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Dialog and empty-state headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Operational panel headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default reading text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Form labels and actions."
+      },
+      "table": {
+        "displayName": "Table",
+        "purpose": "Compact tabular records."
+      },
+      "table-heading": {
+        "displayName": "Table Heading",
+        "purpose": "Ruled table column labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "record-dialog",
+        "value": "0 20px 80px #102a3429",
+        "purpose": "Modal editing above the workspace."
+      },
+      {
+        "name": "toast",
+        "value": "0 8px 35px #142d261a",
+        "purpose": "Transient confirmation above records."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Drawer, modal and chart transitions."
+      },
+      {
+        "name": "control-transition",
+        "value": "0.18s",
+        "purpose": "Background and color response."
+      },
+      {
+        "name": "drawer",
+        "value": "0.25s",
+        "purpose": "Mobile navigation translation."
+      },
+      {
+        "name": "dialog",
+        "value": "0.26s",
+        "purpose": "Record dialog entry."
+      },
+      {
+        "name": "chart-height",
+        "value": "0.6s",
+        "purpose": "Attendance bar updates."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "1500px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1180px"
+      },
+      {
+        "name": "narrow-desktop",
+        "value": "950px"
+      },
+      {
+        "name": "drawer",
+        "value": "760px"
+      },
+      {
+        "name": "stack",
+        "value": "570px"
+      },
+      {
+        "name": "small-phone",
+        "value": "370px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Compact explicit record action.",
+      "html": "<button class=\"ds-button-primary\">Save changes</button>",
+      "css": ".ds-button-primary{font-family:\"DM Sans\",sans-serif;font-size:12px;font-weight:500;background:var(--pine,#173e35);color:#fff;border:0;border-radius:7px;padding:11px 16px;min-height:39px;cursor:pointer;transition:background .18s}.ds-button-primary:hover:not(:disabled){background:#2f5c48}.ds-button-primary:focus-visible{outline:3px solid var(--focus,#a1b95b);outline-offset:3px;}.ds-button-primary:disabled{opacity:.48;cursor:not-allowed}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Compact explicit record action.",
+      "html": "<button class=\"ds-button-secondary\">Cancel</button>",
+      "css": ".ds-button-secondary{font-family:\"DM Sans\",sans-serif;font-size:12px;font-weight:500;background:#fff;color:#405340;border:1px solid #dce1d5;border-radius:7px;padding:11px 16px;min-height:39px;cursor:pointer;transition:background .18s}.ds-button-secondary:hover:not(:disabled){background:#edf0e6}.ds-button-secondary:focus-visible{outline:3px solid var(--focus,#a1b95b);outline-offset:3px;}.ds-button-secondary:disabled{opacity:.48;cursor:not-allowed}"
+    },
+    {
+      "name": "Danger Button",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "Compact explicit record action.",
+      "html": "<button class=\"ds-button-danger\">Delete record</button>",
+      "css": ".ds-button-danger{font-family:\"DM Sans\",sans-serif;font-size:12px;font-weight:500;background:#a34d37;color:#fff;border:0;border-radius:7px;padding:11px 16px;min-height:39px;cursor:pointer;transition:background .18s}.ds-button-danger:hover:not(:disabled){background:#873f2d}.ds-button-danger:focus-visible{outline:3px solid var(--focus,#a1b95b);outline-offset:3px;}.ds-button-danger:disabled{opacity:.48;cursor:not-allowed}"
+    },
+    {
+      "name": "Record Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Labeled school record text field.",
+      "html": "<label class=\"ds-field\">First name<input placeholder=\"First name\" value=\"Daniel\"></label>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:7px;font-family:\"DM Sans\",sans-serif;font-size:12px;font-weight:500;color:var(--ink,#243c34)}.ds-field input{font-family:\"DM Sans\",sans-serif;font-size:13px;min-height:40px;padding:10px 11px;background:#fff;color:#3b5137;border:1px solid #d7dfcc;border-radius:6px}.ds-field input::placeholder{color:var(--muted,#68716a)}.ds-field input:focus{border-color:#7d9866}.ds-field input:focus-visible{outline:3px solid var(--focus,#a1b95b);outline-offset:3px;}@media(max-width:570px){.ds-field input{font-size:16px;min-height:43px}}"
+    },
+    {
+      "name": "Workspace Navigation",
+      "kind": "nav",
+      "refersTo": "navigation-active",
+      "description": "Selected and unselected links on the pine field.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Workspace\"><a href=\"#overview\" aria-current=\"page\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/></svg>Overview</a><a href=\"#students\">Students</a></nav>",
+      "css": ".ds-nav{padding:20px;width:196px;background:var(--pine,#173e35);display:flex;flex-direction:column;gap:6px;font-family:\"DM Sans\",sans-serif}.ds-nav a{display:flex;align-items:center;gap:12px;height:44px;padding:0 14px;color:#c7d7cd;border-radius:7px;font-size:13px;text-decoration:none;transition:background .18s,color .18s}.ds-nav a:hover{background:#244d40;color:#fff}.ds-nav a[aria-current]{background:#e3eccd;color:#203e32;font-weight:600}.ds-nav a:focus-visible{outline:3px solid var(--focus,#a1b95b);outline-offset:3px;}"
+    },
+    {
+      "name": "Present Badge",
+      "kind": "chip",
+      "refersTo": "badge-present",
+      "description": "Labeled positive attendance state.",
+      "html": "<span class=\"ds-badge\"><span></span>Present</span>",
+      "css": ".ds-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:5px;font-family:\"DM Sans\",sans-serif;font-size:10px;font-weight:500;line-height:1.7;white-space:nowrap;background:#ecf3e6;color:#3c6335}.ds-badge>span{width:4px;height:4px;border-radius:50%;background:#728d56}"
+    },
+    {
+      "name": "Data Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Flat bordered heading container for operational data.",
+      "html": "<section class=\"ds-panel\"><h2>Showing up, together.</h2><p>Attendance over the last seven days</p></section>",
+      "css": ".ds-panel{background:var(--white,#fff);color:var(--ink,#243c34);border:1px solid var(--line,#e5e8e0);border-radius:var(--radius,14px);overflow:hidden;padding:23px 25px;font-family:\"DM Sans\",sans-serif}.ds-panel h2{margin:0;font-size:15px;font-weight:550;letter-spacing:-.02em}.ds-panel p{margin:4px 0 0;font-size:11px;color:var(--muted,#68716a)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Campus Handbook",
+    "overview": "The calm precision of a campus handbook, translated into a daily school workspace. Warm paper, pine navigation and literary headings give school administration a human voice, while compact sans-serif records keep the work clear.\n\nThe system is restrained and lightly ruled. Color carries location and status; typography separates welcome and orientation from editing and inspection. Small contextual illustrations belong to the school world, while working controls remain direct.",
+    "keyCharacteristics": [
+      "Literary serif orientation paired with precise sans-serif records.",
+      "Warm paper and pine with quiet botanical accents.",
+      "Flat bordered panels, compact tables and visible keyboard states."
+    ],
+    "rules": [
+      {
+        "name": "The Working Ink Rule",
+        "body": "Use ink for records and pine for navigation and primary actions; reserve pale status colors for labeled states.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Use the serif for orientation and the sans for working data, labels and controls.",
+        "section": "typography"
+      },
+      {
+        "name": "The Quiet Surface Rule",
+        "body": "Keep ordinary panels flat; reserve diffuse shadows for dialogs and notifications.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the serif/sans division between orientation and records.",
+      "Do pair status colors with explicit text and keep numeric records tabular.",
+      "Do retain visible focus rings, labeled icon actions and horizontal scrolling for wide tables.",
+      "Do use the final muted text token for secondary labels and placeholders."
+    ],
+    "donts": [
+      "Don't turn ordinary data panels into floating shadow cards.",
+      "Don't substitute decorative display typography for table text or form labels.",
+      "Don't hide record columns by squeezing their text below the implemented scale."
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+backend/*.db
+frontend/node_modules/
+frontend/dist/
+.DS_Store
+.impeccable/mocks/
+frontend/test-results/
+frontend/playwright-report/
+.impeccable/review/
+*.tsbuildinfo
+.impeccable/detector.json

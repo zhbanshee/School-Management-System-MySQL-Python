@@ -1,7 +1,7 @@
 import csv
 import mysql.connector
 from mysql.connector import errorcode
-from db_controller import SchoolDataControl
+from db_controller_2 import SchoolDataControl
 
 
 def import_from_csv(csv_filename):

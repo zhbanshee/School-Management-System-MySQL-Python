@@ -1,4 +1,4 @@
-from db_controller import SchoolDataControl
+from db_controller_2 import SchoolDataControl
 
 # interactive menu
 def start_app():

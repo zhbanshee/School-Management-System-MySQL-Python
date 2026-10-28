@@ -1,6 +1,10 @@
+import os
+from dotenv import load_dotenv
 import mysql.connector
 from mysql.connector import Error
 from models import StudentInfo, TeacherInfo
+
+load_dotenv()
 
 #main class that manages database and connections
 class SchoolDataControl:
@@ -8,10 +12,11 @@ class SchoolDataControl:
         # connecting to mysql
         try:
             self.db_link = mysql.connector.connect(
-                host='localhost',
-                user='root',
-                password='Qwerty1!', #password of my local mysql
-                database='SchoolManagementSystem'
+                host=os.getenv('MYSQL_HOST', 'localhost'),
+                port=int(os.getenv('MYSQL_PORT', '3306')),
+                user=os.getenv('MYSQL_USER', 'root'),
+                password=os.getenv('MYSQL_PASSWORD', ''),
+                database=os.getenv('MYSQL_DATABASE', 'SchoolManagementSystem')
             )
             self.cursor = self.db_link.cursor()
             print("Successfully linked to database.")
