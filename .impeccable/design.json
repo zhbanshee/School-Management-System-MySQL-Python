@@ -1,437 +1,434 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-28T18:26:53.847518+00:00",
-  "title": "Design System: Schoolhouse",
+  "generatedAt": "2026-10-29T15:28:06.512121+00:00",
+  "title": "Design System: Schoolhouse \u2014 Campus Atelier",
   "extensions": {
     "colorMeta": {
-      "pine": {
+      "tiffany": {
         "role": "primary",
-        "displayName": "Pine",
+        "displayName": "Tiffany",
+        "canonical": "#81d8d0",
         "tonalRamp": [
-          "oklch(15% 0.0165 175.82)",
-          "oklch(27% 0.0307 175.82)",
-          "oklch(39% 0.0401 175.82)",
-          "oklch(51% 0.0472 175.82)",
-          "oklch(63% 0.0472 175.82)",
-          "oklch(75% 0.0377 175.82)",
-          "oklch(87% 0.0236 175.82)",
-          "oklch(95% 0.0094 175.82)"
+          "oklch(15% 0.015 174.5)",
+          "oklch(26% 0.03 174.5)",
+          "oklch(38% 0.05 174.5)",
+          "oklch(50% 0.07 174.5)",
+          "oklch(62% 0.08 174.5)",
+          "oklch(74% 0.065 174.5)",
+          "oklch(86% 0.035 174.5)",
+          "oklch(95% 0.01 174.5)"
         ]
       },
-      "green": {
+      "tiffany-dark": {
         "role": "primary",
-        "displayName": "Green",
+        "displayName": "Tiffany Dark",
+        "canonical": "#226c66",
         "tonalRamp": [
-          "oklch(15% 0.0205 168.86)",
-          "oklch(27% 0.0381 168.86)",
-          "oklch(39% 0.0499 168.86)",
-          "oklch(51% 0.0587 168.86)",
-          "oklch(63% 0.0587 168.86)",
-          "oklch(75% 0.0469 168.86)",
-          "oklch(87% 0.0293 168.86)",
-          "oklch(95% 0.0117 168.86)"
-        ]
-      },
-      "paper": {
-        "role": "neutral",
-        "displayName": "Paper",
-        "tonalRamp": [
-          "oklch(15% 0.0023 115.70)",
-          "oklch(27% 0.0043 115.70)",
-          "oklch(39% 0.0057 115.70)",
-          "oklch(51% 0.0067 115.70)",
-          "oklch(63% 0.0067 115.70)",
-          "oklch(75% 0.0053 115.70)",
-          "oklch(87% 0.0033 115.70)",
-          "oklch(95% 0.0013 115.70)"
+          "oklch(15% 0.015 175.1)",
+          "oklch(26% 0.03 175.1)",
+          "oklch(38% 0.05 175.1)",
+          "oklch(50% 0.07 175.1)",
+          "oklch(62% 0.08 175.1)",
+          "oklch(74% 0.065 175.1)",
+          "oklch(86% 0.035 175.1)",
+          "oklch(95% 0.01 175.1)"
         ]
       },
       "ink": {
         "role": "neutral",
         "displayName": "Ink",
+        "canonical": "#20211f",
         "tonalRamp": [
-          "oklch(15% 0.0117 171.20)",
-          "oklch(27% 0.0217 171.20)",
-          "oklch(39% 0.0283 171.20)",
-          "oklch(51% 0.0333 171.20)",
-          "oklch(63% 0.0333 171.20)",
-          "oklch(75% 0.0267 171.20)",
-          "oklch(87% 0.0167 171.20)",
-          "oklch(95% 0.0067 171.20)"
+          "oklch(15% 0.015 90.0)",
+          "oklch(26% 0.03 90.0)",
+          "oklch(38% 0.05 90.0)",
+          "oklch(50% 0.07 90.0)",
+          "oklch(62% 0.08 90.0)",
+          "oklch(74% 0.065 90.0)",
+          "oklch(86% 0.035 90.0)",
+          "oklch(95% 0.01 90.0)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#f4f2ed",
+        "tonalRamp": [
+          "oklch(15% 0.015 42.9)",
+          "oklch(26% 0.03 42.9)",
+          "oklch(38% 0.05 42.9)",
+          "oklch(50% 0.07 42.9)",
+          "oklch(62% 0.08 42.9)",
+          "oklch(74% 0.065 42.9)",
+          "oklch(86% 0.035 42.9)",
+          "oklch(95% 0.01 42.9)"
         ]
       },
       "muted": {
         "role": "neutral",
         "displayName": "Muted",
+        "canonical": "#60635b",
         "tonalRamp": [
-          "oklch(15% 0.0054 152.36)",
-          "oklch(27% 0.0099 152.36)",
-          "oklch(39% 0.0130 152.36)",
-          "oklch(51% 0.0153 152.36)",
-          "oklch(63% 0.0153 152.36)",
-          "oklch(75% 0.0122 152.36)",
-          "oklch(87% 0.0077 152.36)",
-          "oklch(95% 0.0031 152.36)"
+          "oklch(15% 0.015 82.5)",
+          "oklch(26% 0.03 82.5)",
+          "oklch(38% 0.05 82.5)",
+          "oklch(50% 0.07 82.5)",
+          "oklch(62% 0.08 82.5)",
+          "oklch(74% 0.065 82.5)",
+          "oklch(86% 0.035 82.5)",
+          "oklch(95% 0.01 82.5)"
         ]
       },
       "line": {
         "role": "neutral",
         "displayName": "Line",
+        "canonical": "#d1d3ca",
         "tonalRamp": [
-          "oklch(15% 0.0039 123.47)",
-          "oklch(27% 0.0072 123.47)",
-          "oklch(39% 0.0095 123.47)",
-          "oklch(51% 0.0111 123.47)",
-          "oklch(63% 0.0111 123.47)",
-          "oklch(75% 0.0089 123.47)",
-          "oklch(87% 0.0056 123.47)",
-          "oklch(95% 0.0022 123.47)"
+          "oklch(15% 0.015 73.3)",
+          "oklch(26% 0.03 73.3)",
+          "oklch(38% 0.05 73.3)",
+          "oklch(50% 0.07 73.3)",
+          "oklch(62% 0.08 73.3)",
+          "oklch(74% 0.065 73.3)",
+          "oklch(86% 0.035 73.3)",
+          "oklch(95% 0.01 73.3)"
         ]
       },
       "white": {
         "role": "neutral",
         "displayName": "White",
+        "canonical": "#fff",
         "tonalRamp": [
-          "oklch(15% 0.0000 89.88)",
-          "oklch(27% 0.0000 89.88)",
-          "oklch(39% 0.0000 89.88)",
-          "oklch(51% 0.0000 89.88)",
-          "oklch(63% 0.0000 89.88)",
-          "oklch(75% 0.0000 89.88)",
-          "oklch(87% 0.0000 89.88)",
-          "oklch(95% 0.0000 89.88)"
+          "oklch(15% 0.015 0.0)",
+          "oklch(26% 0.03 0.0)",
+          "oklch(38% 0.05 0.0)",
+          "oklch(50% 0.07 0.0)",
+          "oklch(62% 0.08 0.0)",
+          "oklch(74% 0.065 0.0)",
+          "oklch(86% 0.035 0.0)",
+          "oklch(95% 0.01 0.0)"
         ]
       },
-      "selected-nav": {
-        "role": "secondary",
-        "displayName": "Selected Nav",
+      "field": {
+        "role": "neutral",
+        "displayName": "Field",
+        "canonical": "#fafbf6",
         "tonalRamp": [
-          "oklch(15% 0.0147 120.39)",
-          "oklch(27% 0.0274 120.39)",
-          "oklch(39% 0.0358 120.39)",
-          "oklch(51% 0.0421 120.39)",
-          "oklch(63% 0.0421 120.39)",
-          "oklch(75% 0.0337 120.39)",
-          "oklch(87% 0.0211 120.39)",
-          "oklch(95% 0.0084 120.39)"
-        ]
-      },
-      "welcome": {
-        "role": "secondary",
-        "displayName": "Welcome",
-        "tonalRamp": [
-          "oklch(15% 0.0076 118.23)",
-          "oklch(27% 0.0141 118.23)",
-          "oklch(39% 0.0184 118.23)",
-          "oklch(51% 0.0216 118.23)",
-          "oklch(63% 0.0216 118.23)",
-          "oklch(75% 0.0173 118.23)",
-          "oklch(87% 0.0108 118.23)",
-          "oklch(95% 0.0043 118.23)"
+          "oklch(15% 0.015 72.0)",
+          "oklch(26% 0.03 72.0)",
+          "oklch(38% 0.05 72.0)",
+          "oklch(50% 0.07 72.0)",
+          "oklch(62% 0.08 72.0)",
+          "oklch(74% 0.065 72.0)",
+          "oklch(86% 0.035 72.0)",
+          "oklch(95% 0.01 72.0)"
         ]
       },
       "present-bg": {
         "role": "semantic",
         "displayName": "Present Bg",
+        "canonical": "#dcebe1",
         "tonalRamp": [
-          "oklch(15% 0.0066 130.18)",
-          "oklch(27% 0.0122 130.18)",
-          "oklch(39% 0.0159 130.18)",
-          "oklch(51% 0.0187 130.18)",
-          "oklch(63% 0.0187 130.18)",
-          "oklch(75% 0.0150 130.18)",
-          "oklch(87% 0.0094 130.18)",
-          "oklch(95% 0.0037 130.18)"
+          "oklch(15% 0.015 140.0)",
+          "oklch(26% 0.03 140.0)",
+          "oklch(38% 0.05 140.0)",
+          "oklch(50% 0.07 140.0)",
+          "oklch(62% 0.08 140.0)",
+          "oklch(74% 0.065 140.0)",
+          "oklch(86% 0.035 140.0)",
+          "oklch(95% 0.01 140.0)"
         ]
       },
       "present-text": {
         "role": "semantic",
         "displayName": "Present Text",
+        "canonical": "#285c4c",
         "tonalRamp": [
-          "oklch(15% 0.0295 140.68)",
-          "oklch(27% 0.0549 140.68)",
-          "oklch(39% 0.0717 140.68)",
-          "oklch(51% 0.0844 140.68)",
-          "oklch(63% 0.0844 140.68)",
-          "oklch(75% 0.0675 140.68)",
-          "oklch(87% 0.0422 140.68)",
-          "oklch(95% 0.0169 140.68)"
+          "oklch(15% 0.015 161.5)",
+          "oklch(26% 0.03 161.5)",
+          "oklch(38% 0.05 161.5)",
+          "oklch(50% 0.07 161.5)",
+          "oklch(62% 0.08 161.5)",
+          "oklch(74% 0.065 161.5)",
+          "oklch(86% 0.035 161.5)",
+          "oklch(95% 0.01 161.5)"
         ]
       },
       "late-bg": {
         "role": "semantic",
         "displayName": "Late Bg",
+        "canonical": "#ece5cf",
         "tonalRamp": [
-          "oklch(15% 0.0090 84.59)",
-          "oklch(27% 0.0167 84.59)",
-          "oklch(39% 0.0218 84.59)",
-          "oklch(51% 0.0256 84.59)",
-          "oklch(63% 0.0256 84.59)",
-          "oklch(75% 0.0205 84.59)",
-          "oklch(87% 0.0128 84.59)",
-          "oklch(95% 0.0051 84.59)"
+          "oklch(15% 0.015 45.5)",
+          "oklch(26% 0.03 45.5)",
+          "oklch(38% 0.05 45.5)",
+          "oklch(50% 0.07 45.5)",
+          "oklch(62% 0.08 45.5)",
+          "oklch(74% 0.065 45.5)",
+          "oklch(86% 0.035 45.5)",
+          "oklch(95% 0.01 45.5)"
         ]
       },
       "late-text": {
         "role": "semantic",
         "displayName": "Late Text",
+        "canonical": "#72582e",
         "tonalRamp": [
-          "oklch(15% 0.0307 83.47)",
-          "oklch(27% 0.0570 83.47)",
-          "oklch(39% 0.0746 83.47)",
-          "oklch(51% 0.0878 83.47)",
-          "oklch(63% 0.0878 83.47)",
-          "oklch(75% 0.0702 83.47)",
-          "oklch(87% 0.0439 83.47)",
-          "oklch(95% 0.0176 83.47)"
+          "oklch(15% 0.015 37.1)",
+          "oklch(26% 0.03 37.1)",
+          "oklch(38% 0.05 37.1)",
+          "oklch(50% 0.07 37.1)",
+          "oklch(62% 0.08 37.1)",
+          "oklch(74% 0.065 37.1)",
+          "oklch(86% 0.035 37.1)",
+          "oklch(95% 0.01 37.1)"
         ]
       },
       "absent-bg": {
         "role": "semantic",
         "displayName": "Absent Bg",
+        "canonical": "#f1dfda",
         "tonalRamp": [
-          "oklch(15% 0.0060 44.80)",
-          "oklch(27% 0.0112 44.80)",
-          "oklch(39% 0.0147 44.80)",
-          "oklch(51% 0.0173 44.80)",
-          "oklch(63% 0.0173 44.80)",
-          "oklch(75% 0.0138 44.80)",
-          "oklch(87% 0.0086 44.80)",
-          "oklch(95% 0.0035 44.80)"
+          "oklch(15% 0.015 13.0)",
+          "oklch(26% 0.03 13.0)",
+          "oklch(38% 0.05 13.0)",
+          "oklch(50% 0.07 13.0)",
+          "oklch(62% 0.08 13.0)",
+          "oklch(74% 0.065 13.0)",
+          "oklch(86% 0.035 13.0)",
+          "oklch(95% 0.01 13.0)"
         ]
       },
       "absent-text": {
         "role": "semantic",
         "displayName": "Absent Text",
+        "canonical": "#924b45",
         "tonalRamp": [
-          "oklch(15% 0.0402 34.90)",
-          "oklch(27% 0.0747 34.90)",
-          "oklch(39% 0.0977 34.90)",
-          "oklch(51% 0.1149 34.90)",
-          "oklch(63% 0.1149 34.90)",
-          "oklch(75% 0.0919 34.90)",
-          "oklch(87% 0.0574 34.90)",
-          "oklch(95% 0.0230 34.90)"
-        ]
-      },
-      "focus": {
-        "role": "semantic",
-        "displayName": "Focus",
-        "tonalRamp": [
-          "oklch(15% 0.0433 121.30)",
-          "oklch(27% 0.0804 121.30)",
-          "oklch(39% 0.1052 121.30)",
-          "oklch(51% 0.1237 121.30)",
-          "oklch(63% 0.1237 121.30)",
-          "oklch(75% 0.0990 121.30)",
-          "oklch(87% 0.0619 121.30)",
-          "oklch(95% 0.0247 121.30)"
+          "oklch(15% 0.015 4.7)",
+          "oklch(26% 0.03 4.7)",
+          "oklch(38% 0.05 4.7)",
+          "oklch(50% 0.07 4.7)",
+          "oklch(62% 0.08 4.7)",
+          "oklch(74% 0.065 4.7)",
+          "oklch(86% 0.035 4.7)",
+          "oklch(95% 0.01 4.7)"
         ]
       },
       "danger": {
         "role": "semantic",
         "displayName": "Danger",
+        "canonical": "#9b423b",
         "tonalRamp": [
-          "oklch(15% 0.0418 35.45)",
-          "oklch(27% 0.0776 35.45)",
-          "oklch(39% 0.1015 35.45)",
-          "oklch(51% 0.1194 35.45)",
-          "oklch(63% 0.1194 35.45)",
-          "oklch(75% 0.0955 35.45)",
-          "oklch(87% 0.0597 35.45)",
-          "oklch(95% 0.0239 35.45)"
+          "oklch(15% 0.015 4.4)",
+          "oklch(26% 0.03 4.4)",
+          "oklch(38% 0.05 4.4)",
+          "oklch(50% 0.07 4.4)",
+          "oklch(62% 0.08 4.4)",
+          "oklch(74% 0.065 4.4)",
+          "oklch(86% 0.035 4.4)",
+          "oklch(95% 0.01 4.4)"
         ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Page orientation and welcome headings."
+        "purpose": "Page headings."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Dialog and empty-state headings."
+        "purpose": "Working panel headings."
       },
-      "title": {
-        "displayName": "Title",
-        "purpose": "Operational panel headings."
+      "timetable-title": {
+        "displayName": "Timetable Title",
+        "purpose": "Carbon timetable heading."
+      },
+      "metric": {
+        "displayName": "Metric",
+        "purpose": "Attendance summary emphasis."
+      },
+      "dialog-title": {
+        "displayName": "Dialog Title",
+        "purpose": "Native form dialog heading."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Default reading text."
+        "purpose": "Application base text."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Form labels and actions."
+        "purpose": "Controls and field labels."
       },
-      "table": {
-        "displayName": "Table",
-        "purpose": "Compact tabular records."
-      },
-      "table-heading": {
-        "displayName": "Table Heading",
-        "purpose": "Ruled table column labels."
+      "table-label": {
+        "displayName": "Table Label",
+        "purpose": "Compact column headings."
       }
     },
     "shadows": [
       {
-        "name": "record-dialog",
-        "value": "0 20px 80px #102a3429",
-        "purpose": "Modal editing above the workspace."
+        "name": "dialog",
+        "value": "0 22px 90px #162a2638",
+        "purpose": "Native modal only."
       },
       {
         "name": "toast",
-        "value": "0 8px 35px #142d261a",
-        "purpose": "Transient confirmation above records."
+        "value": "0 8px 30px #182d2626",
+        "purpose": "Transient confirmation."
       }
     ],
     "motion": [
       {
         "name": "ease",
         "value": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Drawer, modal and chart transitions."
+        "purpose": "Dialog and navigation entrance."
       },
       {
         "name": "control-transition",
         "value": "0.18s",
-        "purpose": "Background and color response."
+        "purpose": "Control color changes."
       },
       {
-        "name": "drawer",
+        "name": "surface-transition",
         "value": "0.25s",
-        "purpose": "Mobile navigation translation."
-      },
-      {
-        "name": "dialog",
-        "value": "0.26s",
-        "purpose": "Record dialog entry."
-      },
-      {
-        "name": "chart-height",
-        "value": "0.6s",
-        "purpose": "Attendance bar updates."
+        "purpose": "Dialog and off-canvas navigation; disabled for reduced motion."
       }
     ],
     "breakpoints": [
       {
-        "name": "wide",
-        "value": "1500px"
+        "name": "wide-min",
+        "value": "1600px"
       },
       {
-        "name": "compact-desktop",
-        "value": "1180px"
+        "name": "desktop-max",
+        "value": "1250px"
       },
       {
-        "name": "narrow-desktop",
-        "value": "950px"
+        "name": "compact-max",
+        "value": "1050px"
       },
       {
-        "name": "drawer",
+        "name": "narrow-max",
+        "value": "900px"
+      },
+      {
+        "name": "navigation-max",
         "value": "760px"
       },
       {
-        "name": "stack",
-        "value": "570px"
+        "name": "stack-max",
+        "value": "620px"
       },
       {
-        "name": "small-phone",
+        "name": "small-phone-max",
         "value": "370px"
+      },
+      {
+        "name": "auth-compact-max",
+        "value": "1100px"
       }
     ]
   },
   "components": [
     {
-      "name": "Primary Button",
+      "name": "Primary action",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Compact explicit record action.",
-      "html": "<button class=\"ds-button-primary\">Save changes</button>",
-      "css": ".ds-button-primary{font-family:\"DM Sans\",sans-serif;font-size:12px;font-weight:500;background:var(--pine,#173e35);color:#fff;border:0;border-radius:7px;padding:11px 16px;min-height:39px;cursor:pointer;transition:background .18s}.ds-button-primary:hover:not(:disabled){background:#2f5c48}.ds-button-primary:focus-visible{outline:3px solid var(--focus,#a1b95b);outline-offset:3px;}.ds-button-primary:disabled{opacity:.48;cursor:not-allowed}"
+      "description": "Carbon action used to add or save records.",
+      "html": "<button class=\"ds-primary\">Add student</button>",
+      "css": "@font-face{font-family:Archivo;src:url(/fonts/archivo.woff2) format(\"woff2\");font-weight:100 900;font-display:swap}@font-face{font-family:\"IBM Plex Sans\";src:url(/fonts/ibm-plex-sans.woff2) format(\"woff2\");font-weight:100 700;font-display:swap}.ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:42px;padding:11px 16px;border:1px solid var(--ink,#20211f);border-radius:4px;font:500 12px/1.5 \"IBM Plex Sans\",sans-serif;cursor:pointer;transition:background .18s;background:var(--ink,#20211f);color:#fff}.ds-primary:hover{background:#394039}.ds-primary:focus-visible{outline:3px solid var(--tiffany-dark,#226c66);outline-offset:4px}.ds-primary:disabled{opacity:.45;cursor:not-allowed}"
     },
     {
-      "name": "Secondary Button",
+      "name": "Secondary action",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "Compact explicit record action.",
-      "html": "<button class=\"ds-button-secondary\">Cancel</button>",
-      "css": ".ds-button-secondary{font-family:\"DM Sans\",sans-serif;font-size:12px;font-weight:500;background:#fff;color:#405340;border:1px solid #dce1d5;border-radius:7px;padding:11px 16px;min-height:39px;cursor:pointer;transition:background .18s}.ds-button-secondary:hover:not(:disabled){background:#edf0e6}.ds-button-secondary:focus-visible{outline:3px solid var(--focus,#a1b95b);outline-offset:3px;}.ds-button-secondary:disabled{opacity:.48;cursor:not-allowed}"
+      "description": "Outlined companion for export and cancel.",
+      "html": "<button class=\"ds-secondary\">Export CSV</button>",
+      "css": "@font-face{font-family:Archivo;src:url(/fonts/archivo.woff2) format(\"woff2\");font-weight:100 900;font-display:swap}@font-face{font-family:\"IBM Plex Sans\";src:url(/fonts/ibm-plex-sans.woff2) format(\"woff2\");font-weight:100 700;font-display:swap}.ds-secondary{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:42px;padding:11px 16px;border:1px solid var(--ink,#20211f);border-radius:4px;font:500 12px/1.5 \"IBM Plex Sans\",sans-serif;cursor:pointer;transition:background .18s;background:transparent;color:var(--ink,#20211f);border-color:#a8ada2}.ds-secondary:hover{background:#e6e9df}.ds-secondary:focus-visible{outline:3px solid var(--tiffany-dark,#226c66);outline-offset:4px}"
     },
     {
-      "name": "Danger Button",
-      "kind": "button",
-      "refersTo": "button-danger",
-      "description": "Compact explicit record action.",
-      "html": "<button class=\"ds-button-danger\">Delete record</button>",
-      "css": ".ds-button-danger{font-family:\"DM Sans\",sans-serif;font-size:12px;font-weight:500;background:#a34d37;color:#fff;border:0;border-radius:7px;padding:11px 16px;min-height:39px;cursor:pointer;transition:background .18s}.ds-button-danger:hover:not(:disabled){background:#873f2d}.ds-button-danger:focus-visible{outline:3px solid var(--focus,#a1b95b);outline-offset:3px;}.ds-button-danger:disabled{opacity:.48;cursor:not-allowed}"
-    },
-    {
-      "name": "Record Field",
+      "name": "Search field",
       "kind": "input",
       "refersTo": "input",
-      "description": "Labeled school record text field.",
-      "html": "<label class=\"ds-field\">First name<input placeholder=\"First name\" value=\"Daniel\"></label>",
-      "css": ".ds-field{display:flex;flex-direction:column;gap:7px;font-family:\"DM Sans\",sans-serif;font-size:12px;font-weight:500;color:var(--ink,#243c34)}.ds-field input{font-family:\"DM Sans\",sans-serif;font-size:13px;min-height:40px;padding:10px 11px;background:#fff;color:#3b5137;border:1px solid #d7dfcc;border-radius:6px}.ds-field input::placeholder{color:var(--muted,#68716a)}.ds-field input:focus{border-color:#7d9866}.ds-field input:focus-visible{outline:3px solid var(--focus,#a1b95b);outline-offset:3px;}@media(max-width:570px){.ds-field input{font-size:16px;min-height:43px}}"
+      "description": "Directory search with wrapper focus treatment.",
+      "html": "<label class=\"ds-search\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input aria-label=\"Search students\" placeholder=\"Search students\u2026\"/></label>",
+      "css": "@font-face{font-family:Archivo;src:url(/fonts/archivo.woff2) format(\"woff2\");font-weight:100 900;font-display:swap}@font-face{font-family:\"IBM Plex Sans\";src:url(/fonts/ibm-plex-sans.woff2) format(\"woff2\");font-weight:100 700;font-display:swap}.ds-search{display:flex;align-items:center;gap:9px;max-width:360px;padding:0 11px;border:1px solid #a7b09e;border-radius:4px;background:#fafbf6;color:var(--muted,#60635b)}.ds-search input{border:0;background:none;outline:0;width:100%;min-width:0;padding:10px 0;font:400 12px/1.5 \"IBM Plex Sans\",sans-serif;color:var(--ink,#20211f)}.ds-search:focus-within{outline:2px solid var(--tiffany-dark,#226c66);outline-offset:3px}"
     },
     {
-      "name": "Workspace Navigation",
+      "name": "Active navigation",
       "kind": "nav",
       "refersTo": "navigation-active",
-      "description": "Selected and unselected links on the pine field.",
-      "html": "<nav class=\"ds-nav\" aria-label=\"Workspace\"><a href=\"#overview\" aria-current=\"page\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1\"/></svg>Overview</a><a href=\"#students\">Students</a></nav>",
-      "css": ".ds-nav{padding:20px;width:196px;background:var(--pine,#173e35);display:flex;flex-direction:column;gap:6px;font-family:\"DM Sans\",sans-serif}.ds-nav a{display:flex;align-items:center;gap:12px;height:44px;padding:0 14px;color:#c7d7cd;border-radius:7px;font-size:13px;text-decoration:none;transition:background .18s,color .18s}.ds-nav a:hover{background:#244d40;color:#fff}.ds-nav a[aria-current]{background:#e3eccd;color:#203e32;font-weight:600}.ds-nav a:focus-visible{outline:3px solid var(--focus,#a1b95b);outline-offset:3px;}"
+      "description": "Tiffany rail with an explicit carbon selected route.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Workspace\"><a class=\"ds-route\" href=\"#overview\" aria-current=\"page\"><svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"7\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\"/></svg>Overview</a></nav>",
+      "css": "@font-face{font-family:Archivo;src:url(/fonts/archivo.woff2) format(\"woff2\");font-weight:100 900;font-display:swap}@font-face{font-family:\"IBM Plex Sans\";src:url(/fonts/ibm-plex-sans.woff2) format(\"woff2\");font-weight:100 700;font-display:swap}.ds-nav{width:176px;background:var(--tiffany,#81d8d0);padding:22px}.ds-route{display:flex;align-items:center;gap:11px;min-height:46px;padding:0 11px;border-radius:3px;background:var(--ink,#20211f);color:#f8faf4;font:500 14px/1.5 \"IBM Plex Sans\",sans-serif;text-decoration:none;transition:background .18s}.ds-route:hover{background:#394039}.ds-route:focus-visible{outline:3px solid var(--tiffany-dark,#226c66);outline-offset:4px}"
     },
     {
-      "name": "Present Badge",
+      "name": "Present status",
       "kind": "chip",
       "refersTo": "badge-present",
-      "description": "Labeled positive attendance state.",
-      "html": "<span class=\"ds-badge\"><span></span>Present</span>",
-      "css": ".ds-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:5px;font-family:\"DM Sans\",sans-serif;font-size:10px;font-weight:500;line-height:1.7;white-space:nowrap;background:#ecf3e6;color:#3c6335}.ds-badge>span{width:4px;height:4px;border-radius:50%;background:#728d56}"
+      "description": "Noninteractive status label with redundant text and dot.",
+      "html": "<span class=\"ds-badge\"><i class=\"ds-dot\" aria-hidden=\"true\"></i>Present</span>",
+      "css": "@font-face{font-family:Archivo;src:url(/fonts/archivo.woff2) format(\"woff2\");font-weight:100 900;font-display:swap}@font-face{font-family:\"IBM Plex Sans\";src:url(/fonts/ibm-plex-sans.woff2) format(\"woff2\");font-weight:100 700;font-display:swap}.ds-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 7px;border-radius:3px;white-space:nowrap;background:#dcebe1;color:#285c4c;font:500 10px/1.7 \"IBM Plex Sans\",sans-serif}.ds-dot{width:4px;height:4px;background:currentColor;border-radius:50%}"
     },
     {
-      "name": "Data Panel",
+      "name": "Carbon timetable",
       "kind": "card",
-      "refersTo": "panel",
-      "description": "Flat bordered heading container for operational data.",
-      "html": "<section class=\"ds-panel\"><h2>Showing up, together.</h2><p>Attendance over the last seven days</p></section>",
-      "css": ".ds-panel{background:var(--white,#fff);color:var(--ink,#243c34);border:1px solid var(--line,#e5e8e0);border-radius:var(--radius,14px);overflow:hidden;padding:23px 25px;font-family:\"DM Sans\",sans-serif}.ds-panel h2{margin:0;font-size:15px;font-weight:550;letter-spacing:-.02em}.ds-panel p{margin:4px 0 0;font-size:11px;color:var(--muted,#68716a)}"
+      "refersTo": "timetable",
+      "description": "Signature schedule surface with selected date and ruled record.",
+      "html": "<section class=\"ds-schedule\"><h2>Timetable</h2><p>Weekly course schedule</p><button class=\"ds-day\" aria-pressed=\"true\"><span>MON</span><strong>26</strong></button><div class=\"ds-entry\"><time>09:00</time><div><strong>Introduction to Design</strong><small>Room 204 \u00b7 3 credits</small></div></div></section>",
+      "css": "@font-face{font-family:Archivo;src:url(/fonts/archivo.woff2) format(\"woff2\");font-weight:100 900;font-display:swap}@font-face{font-family:\"IBM Plex Sans\";src:url(/fonts/ibm-plex-sans.woff2) format(\"woff2\");font-weight:100 700;font-display:swap}.ds-schedule{max-width:280px;padding:25px 23px 0;background:var(--ink,#20211f);color:#f5f5ed;border-radius:4px;font:400 14px/1.5 \"IBM Plex Sans\",sans-serif}.ds-schedule h2{margin:0;font:500 27px/1.3 Archivo,sans-serif;letter-spacing:-.04em}.ds-schedule p{font-size:11px;color:#bbc5b7;margin:6px 0 22px}.ds-day{border:0;border-radius:3px;padding:8px 12px 10px;background:var(--tiffany,#81d8d0);color:var(--ink,#20211f);cursor:pointer}.ds-day span{display:block;font:400 9px \"IBM Plex Sans\",sans-serif}.ds-day strong{display:block;margin-top:3px;font:400 17px Archivo,sans-serif}.ds-day:hover{background:#a8e5df}.ds-day:focus-visible{outline:3px solid #a8e5df;outline-offset:4px}.ds-entry{display:flex;gap:10px;margin-top:16px;padding:15px 0;border-top:1px solid #4b5548}.ds-entry time{font-size:12px;color:var(--tiffany,#81d8d0)}.ds-entry strong{font:450 16px/1.35 Archivo,sans-serif;letter-spacing:-.02em}.ds-entry small{display:block;margin-top:8px;font-size:11px;color:#bac5b5}"
+    },
+    {
+      "name": "Record form surface",
+      "kind": "custom",
+      "refersTo": "dialog",
+      "description": "Modal interior with the native dialog corner and field treatment.",
+      "html": "<section class=\"ds-dialog\" aria-label=\"New student form\"><header class=\"ds-dialog-head\"><h2>New student</h2></header><label class=\"ds-field\">First name<input placeholder=\"First name\"/></label><footer class=\"ds-dialog-foot\"><button class=\"ds-save\">Save student</button></footer></section>",
+      "css": "@font-face{font-family:Archivo;src:url(/fonts/archivo.woff2) format(\"woff2\");font-weight:100 900;font-display:swap}@font-face{font-family:\"IBM Plex Sans\";src:url(/fonts/ibm-plex-sans.woff2) format(\"woff2\");font-weight:100 700;font-display:swap}.ds-dialog{max-width:570px;border-radius:12px;background:#fafbf6;color:var(--ink,#20211f);box-shadow:0 22px 90px #162a2638;overflow:hidden;font:400 14px/1.5 \"IBM Plex Sans\",sans-serif}.ds-dialog-head{padding:27px 28px 22px;border-bottom:1px solid var(--line,#d1d3ca)}.ds-dialog h2{margin:0;font:500 28px/1.5 Archivo,sans-serif;letter-spacing:-.035em}.ds-field{display:flex;flex-direction:column;gap:8px;padding:24px 28px;font-size:12px;font-weight:500}.ds-field input{min-height:43px;border:1px solid #a8b29f;border-radius:4px;background:white;padding:0 11px;font:400 13px \"IBM Plex Sans\",sans-serif;color:var(--ink,#20211f)}.ds-field input:focus{border-color:var(--tiffany-dark,#226c66)}.ds-field input:focus-visible{outline:3px solid var(--tiffany-dark,#226c66);outline-offset:4px}.ds-dialog-foot{padding:20px 28px;border-top:1px solid var(--line,#d1d3ca);text-align:right}.ds-save{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:42px;padding:11px 16px;border:1px solid var(--ink,#20211f);border-radius:4px;font:500 12px/1.5 \"IBM Plex Sans\",sans-serif;cursor:pointer;transition:background .18s;background:var(--ink,#20211f);color:white}.ds-save:hover{background:#394039}.ds-save:focus-visible{outline:3px solid var(--tiffany-dark,#226c66);outline-offset:4px}"
+    },
+    {
+      "name": "Account access modes",
+      "kind": "nav",
+      "description": "Flat sign-in and registration mode switch with explicit selected, keyboard focus and disabled states. Full account layout and state evidence: frontend/src/AuthGate.tsx and .impeccable/auth-surface.md.",
+      "html": "<div class=\"ds-auth-switch\" role=\"group\" aria-label=\"Account access\"><button type=\"button\" aria-pressed=\"true\">Sign in</button><button type=\"button\" aria-pressed=\"false\">Create account</button></div>",
+      "css": ".ds-auth-switch{display:flex;gap:20px;border-bottom:1px solid var(--line,#d1d3ca)}.ds-auth-switch button{border:0;border-bottom:2px solid transparent;background:none;font:400 12px/1.5 \"IBM Plex Sans\",sans-serif;padding:0 0 12px;color:var(--muted,#60635b);margin-bottom:-1px;cursor:pointer}.ds-auth-switch button[aria-pressed=\"true\"]{border-bottom-color:var(--ink,#20211f);color:var(--ink,#20211f);font-weight:500}.ds-auth-switch button:hover:not(:disabled){color:var(--tiffany-dark,#226c66)}.ds-auth-switch button:focus-visible{outline:3px solid var(--tiffany-dark,#226c66);outline-offset:4px}.ds-auth-switch button:disabled{opacity:.45;cursor:not-allowed}"
     }
   ],
   "narrative": {
-    "northStar": "The Campus Handbook",
-    "overview": "The calm precision of a campus handbook, translated into a daily school workspace. Warm paper, pine navigation and literary headings give school administration a human voice, while compact sans-serif records keep the work clear.\n\nThe system is restrained and lightly ruled. Color carries location and status; typography separates welcome and orientation from editing and inspection. Small contextual illustrations belong to the school world, while working controls remain direct.",
+    "northStar": "Campus Atelier",
+    "overview": "Campus Atelier gives everyday school administration the clarity of a contemporary design-school catalog. Tiffany navigation establishes orientation; warm paper holds the working data; carbon provides the concentrated timetable contrast.\n\nArchivo supplies robust headings and metrics while IBM Plex Sans keeps records, controls and supporting text precise. The workspace is open and ruled rather than divided into a grid of floating cards. The user-selected world replaces the former green serif identity; no serif face belongs to this system.",
     "keyCharacteristics": [
-      "Literary serif orientation paired with precise sans-serif records.",
-      "Warm paper and pine with quiet botanical accents.",
-      "Flat bordered panels, compact tables and visible keyboard states."
+      "Tiffany navigation and carbon timetable contrast.",
+      "Open working surfaces separated by thin rules.",
+      "Compact sans-serif controls with restrained corners.",
+      "Tabular numbers and explicit selected states."
     ],
     "rules": [
       {
-        "name": "The Working Ink Rule",
-        "body": "Use ink for records and pine for navigation and primary actions; reserve pale status colors for labeled states.",
+        "name": "The Working Ground Rule",
+        "body": "Keep records on the warm paper ground; use carbon for concentrated schedule content and Tiffany for orientation and selection.",
         "section": "colors"
       },
       {
-        "name": "The Two Voices Rule",
-        "body": "Use the serif for orientation and the sans for working data, labels and controls.",
+        "name": "The Two Sans Rule",
+        "body": "Use Archivo for headings and numerical emphasis, and IBM Plex Sans for records, labels and controls.",
         "section": "typography"
       },
       {
-        "name": "The Quiet Surface Rule",
-        "body": "Keep ordinary panels flat; reserve diffuse shadows for dialogs and notifications.",
+        "name": "The Ruled Workspace Rule",
+        "body": "Separate ordinary data regions with spacing and thin rules; reserve floating depth for dialogs and notifications.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do preserve the serif/sans division between orientation and records.",
-      "Do pair status colors with explicit text and keep numeric records tabular.",
-      "Do retain visible focus rings, labeled icon actions and horizontal scrolling for wide tables.",
-      "Do use the final muted text token for secondary labels and placeholders."
+      "Do retain Tiffany navigation, warm paper data surfaces and the carbon timetable.",
+      "Do preserve tabular numerals in tables, totals, charts and dates.",
+      "Do give keyboard focus a visible Tiffany-dark outline and keep selected states explicit.",
+      "Do retain horizontal table scrolling on narrow screens and readable form field sizes."
     ],
     "donts": [
-      "Don't turn ordinary data panels into floating shadow cards.",
-      "Don't substitute decorative display typography for table text or form labels.",
-      "Don't hide record columns by squeezing their text below the implemented scale."
+      "Don't restore the rejected green serif visual identity or introduce orange as the main accent.",
+      "Don't turn every data section into a raised card.",
+      "Don't replace functional icons with decorative glyphs or promote page-specific slogans into reusable visual rules."
     ]
   }
 }

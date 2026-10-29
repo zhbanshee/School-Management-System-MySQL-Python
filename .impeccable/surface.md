@@ -1,11 +1,11 @@
-# Administrator workspace
+# Administrator workspace — Campus Atelier
 Mode: Operate. Build path: code-first (app screen).
-User delegated stack and implementation decisions and confirmed English, all five entities and the administrator role.
-THESIS: The calm precision of a campus handbook, translated into a daily school workspace.
-OWN-WORLD: warm paper, pine-green navigation, ink text, a literary serif for greetings and a humanist sans for work.
-STORY: first understand the school day, then move directly to the records that need attention.
-FIRST VIEWPORT: persistent navigation, page header and date, a welcome panel with compact school totals, attendance history, weekly timetable and enrollment table.
-FORM: seed:4b124e40e9b3c04b. Grounded candidate 5, campus handbook. Other grounded sources considered: university prospectus, library identity, printed timetable, architecture catalog, student exhibition, examination booklet.
-SIGNATURE: editorial serif headings alongside precise, lightly ruled data tables, and an actual seven-day attendance chart with the selected day inspectable.
-Scope: overview, students, teachers, courses, enrollments and attendance, accessible forms, local demo and MySQL adapter. No fabricated performance claims.
-Challenger judgments: consumer app competitive on approachability, weaker on dense school records; transit map declined for task clarity, keep its disciplined state vocabulary; slide rack declined for data legibility, keep its alignment discipline; reference setting declined for familiar task controls, keep its typographic hierarchy; gate board competitive on timetable clarity, weaker on student identity. Since the user delegated choices, proceed with the handbook direction.
+User selected Campus Atelier in chat and explicitly replaced the proposed orange with Tiffany blue. This choice authorizes the redesign of the former green/serif world and its design documentation.
+THESIS: A contemporary school workspace with the typographic clarity of a design-school exhibition catalog.
+OWN-WORLD: Tiffany #81d8d0 navigation, warm white #f4f2ed working ground, carbon #20211f, Archivo display and IBM Plex Sans for data. Tiffany is the requested hue, not a commercial affiliation.
+STORY: start with actual school totals, inspect attendance, review enrollments and work through the timetable.
+FIRST VIEWPORT: a 220px Tiffany navigation rail; functional utility row; School overview heading; compact horizontal totals; a wide continuous attendance/enrollments area and a contrasting carbon timetable on the right. No marketing welcome panel or ornamental illustrations.
+FORM: seed:e0292d7dcc5f9a97, assigned grounded candidate 7, Campus Atelier. Approved HTML sketch .impeccable/mocks/decision/atelier.html, with the user's color override. No approved image comp.
+SIGNATURE: carbon timetable next to an open ruled workspace; actual attendance states use stacked bars; weekday controls show real dates. The data, not promotional copy, establishes hierarchy.
+Cross-surface: same typographic scale, Tiffany/ink palette, thin rules and readable table density on all five directories, forms, loading/error/empty states and mobile navigation.
+Other grounded candidates: contemporary campus wayfinding, student publication, science journal, collegiate sports graphics, modern school library identity, student exhibition identity, design-school annual publication. Catalog challengers were recorded in the preview hand; none adopted. Crouwel supplied alignment discipline, the data-field challenger supplied restraint in motion; no unrelated visual motifs are imported.

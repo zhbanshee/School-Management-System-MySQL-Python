@@ -15,8 +15,12 @@ CREATE TABLE IF NOT EXISTS Attendance (AttendanceID INTEGER PRIMARY KEY AUTOINCR
 
 
 class Database:
-    def __init__(self, path=None):
-        self.mysql = path is None and os.getenv("SCHOOL_DB", "sqlite") == "mysql"
+    def __init__(self, path=None, mysql=None):
+        self.mysql = (
+            mysql
+            if mysql is not None
+            else (path is None and os.getenv("SCHOOL_DB", "sqlite") == "mysql")
+        )
         if self.mysql:
             import mysql.connector
 

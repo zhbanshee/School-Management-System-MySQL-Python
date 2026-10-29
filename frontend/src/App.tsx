@@ -24,8 +24,8 @@ import {
   WifiOff,
   X,
   Pencil,
-  Leaf,
   ExternalLink,
+  LogOut,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -42,6 +42,7 @@ import {
   readableDate,
 } from "./types";
 import RecordForm from "./RecordForm";
+import { apiFetch, type SessionUser } from "./api";
 
 const navigation: { page: Page; icon: LucideIcon }[] = [
   { page: "overview", icon: LayoutDashboard },
@@ -52,12 +53,12 @@ const navigation: { page: Page; icon: LucideIcon }[] = [
   { page: "attendance", icon: ClipboardCheck },
 ];
 const descriptions: Record<Page, string> = {
-  overview: "A little clarity for the day ahead.",
-  students: "Every student, and the details that matter.",
-  teachers: "The people who make learning happen.",
-  courses: "Make room for the next great idea.",
-  registrations: "Connect students, teachers and possibilities.",
-  attendance: "Small check-ins. A clearer picture.",
+  overview: "Attendance, people and the week ahead.",
+  students: "Student records, course registrations and contact details.",
+  teachers: "Teaching staff, departments and course assignments.",
+  courses: "Courses, credits, classrooms and weekly schedules.",
+  registrations: "Manage course enrollments and student grades.",
+  attendance: "Record and review attendance for each enrollment.",
 };
 const pageFromHash = (): Page =>
   navigation.some((x) => x.page === location.hash.slice(1))
@@ -97,7 +98,35 @@ function Badge({
   return <span className={`badge ${tone}`}>{children}</span>;
 }
 
-export default function App() {
+export default function App({
+  user,
+  onSignOut,
+}: {
+  user: SessionUser;
+  onSignOut: () => Promise<void>;
+}) {
+  const initials = user.name
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((x) => x[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+  const [signingOut, setSigningOut] = useState(false);
+  async function signOut() {
+    setSigningOut(true);
+    try {
+      await onSignOut();
+    } catch (reason) {
+      setToast(
+        reason instanceof Error
+          ? reason.message
+          : "Could not sign out. Try again.",
+      );
+    } finally {
+      setSigningOut(false);
+    }
+  }
   const [data, setData] = useState<SchoolData>(emptyData),
     [page, setPage] = useState<Page>(pageFromHash),
     [loading, setLoading] = useState(true),
@@ -114,7 +143,7 @@ export default function App() {
     } | null>(null);
   const searchRef = useRef<HTMLInputElement>(null);
   const load = useCallback(async () => {
-    const response = await fetch("/api/data");
+    const response = await apiFetch("/api/data");
     if (!response.ok)
       throw new Error("The school records could not be loaded.");
     const result: SchoolData = await response.json();
@@ -193,8 +222,7 @@ export default function App() {
     data.registrations.find((r) => r.RegistrationID === id);
   const enrolled = (id: string | number) =>
     data.registrations.filter((r) => r.StudentID === id);
-  const title =
-    page === "overview" ? "Your school, at a glance." : labels[page];
+  const title = page === "overview" ? "School overview" : labels[page];
   const today = new Date(),
     todayISO = localDate(today);
   const todayAttendance = data.attendance.filter(
@@ -287,12 +315,26 @@ export default function App() {
                   "Sunday",
                 ].map((x) => [x, x])
               : [];
-  function exportCSV(entity: Entity) {
-    const link = document.createElement("a");
-    link.href = `/api/export/${entity}`;
-    link.download = `school-${entity}.csv`;
-    link.click();
+  async function exportCSV(entity: Entity) {
+    try {
+      const response = await apiFetch(`/api/export/${entity}`);
+      if (!response.ok)
+        throw new Error("Could not export these records. Try again.");
+      const url = URL.createObjectURL(await response.blob());
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `school-${entity}.csv`;
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    } catch (reason) {
+      setToast(
+        reason instanceof Error
+          ? reason.message
+          : "Could not export these records.",
+      );
+    }
   }
+
   function tableHeader() {
     switch (page) {
       case "students":
@@ -329,7 +371,9 @@ export default function App() {
             <td className="numeric">ST-{row.StudentID}</td>
             <td>
               {enrolled(row.StudentID).length}{" "}
-              <span className="muted">courses</span>
+              <span className="muted">
+                {enrolled(row.StudentID).length === 1 ? "course" : "courses"}
+              </span>
             </td>
             <td>
               <Badge
@@ -449,20 +493,18 @@ export default function App() {
         aria-label="Main navigation"
       >
         <a href="#overview" className="brand" aria-label="Schoolhouse home">
-          <span className="brand-symbol">
-            <BookOpen size={25} strokeWidth={1.6} />
-          </span>
-          schoolhouse<span className="brand-period">.</span>
-        </a>
-        <div className="workspace-label">
-          <span className="school-seal">
-            <GraduationCap size={18} />
+          <span className="brand-symbol" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2 2h8v8H2zM14 2h8v8h-8zM2 14h8v8H2zM14 14h8v3h-5v5h-3z" />
+            </svg>
           </span>
           <span>
-            School workspace<small>Administration</small>
+            Schoolhouse<span className="brand-period">.</span>
           </span>
+        </a>
+        <div className="workspace-label">
+          School workspace<span>Administration</span>
         </div>
-        <span className="nav-caption">WORKSPACE</span>
         <nav>
           {navigation.map(({ page: target, icon: Icon }) => (
             <a
@@ -481,21 +523,28 @@ export default function App() {
           ))}
         </nav>
         <div className="sidebar-note">
-          <Leaf size={22} strokeWidth={1.4} />
-          <p>
-            A good school day
+          <span className="sidebar-note-line" />
+          <span>
+            People. Courses.
             <br />
-            starts with a little order.
-          </p>
-          <span>Room for what matters.</span>
+            One shared workspace.
+          </span>
         </div>
         <div className="sidebar-bottom">
-          <span className="admin-avatar">AD</span>
+          <span className="admin-avatar">{initials}</span>
           <span>
-            <strong>School administrator</strong>
-            <small>Local workspace</small>
+            <strong title={user.name}>{user.name}</strong>
+            <small title={user.email}>{user.email}</small>
           </span>
-          <span className="online-dot" aria-label="Local workspace" />
+          <button
+            type="button"
+            className="icon-button sign-out"
+            aria-label="Sign out"
+            onClick={signOut}
+            disabled={signingOut}
+          >
+            <LogOut size={17} />
+          </button>
         </div>
       </aside>
       <div className="main-shell" inert={mobileNav}>
@@ -524,7 +573,7 @@ export default function App() {
             </span>
             <span className="topbar-divider" />
             <span className="top-avatar" title="Administrator">
-              AD
+              {initials}
             </span>
           </div>
         </header>
@@ -573,25 +622,23 @@ export default function App() {
               <span className="demo-dot" />
               <span>
                 Demo workspace{" "}
-                <span className="demo-detail">
-                  · Fictional school data, ready to explore.
-                </span>
+                <span className="demo-detail">· Fictional school data.</span>
               </span>
               <span className="demo-persistence">
-                Changes are saved locally
+                Changes are saved to your workspace
               </span>
             </div>
           )}
           {loading ? (
             <div className="loading-state" role="status">
               <LoaderCircle size={26} className="spin" />
-              <h2>Opening your workspace…</h2>
-              <p>Getting the school day in order.</p>
+              <h2>Loading school records…</h2>
+              <p>This should only take a moment.</p>
             </div>
           ) : loadError ? (
             <div className="empty-state" role="alert">
               <WifiOff size={32} />
-              <h2>Your records are out of reach.</h2>
+              <h2>Unable to load school records.</h2>
               <p>{loadError}</p>
               <button
                 className="primary-button"
@@ -612,57 +659,23 @@ export default function App() {
           ) : page === "overview" ? (
             <>
               <section
-                className="welcome-panel"
-                aria-labelledby="welcome-title"
+                className="school-totals"
+                aria-label="School record totals"
               >
-                <div className="welcome-copy">
-                  <h2 id="welcome-title">
-                    Big futures.
-                    <br />
-                    <em>Everyday beginnings.</em>
-                  </h2>
-                  <p>
-                    All the people, classes and little details
-                    <br className="desktop-break" /> that keep your school
-                    moving.
-                  </p>
-                  <button
-                    className="welcome-link"
-                    onClick={() => navigate("students")}
-                  >
-                    Meet your students <ArrowRight size={17} />
+                {(
+                  [
+                    { entity: "students", label: "Students" },
+                    { entity: "teachers", label: "Teachers" },
+                    { entity: "courses", label: "Courses" },
+                    { entity: "registrations", label: "Enrollments" },
+                  ] as const
+                ).map(({ entity, label }) => (
+                  <button key={entity} onClick={() => navigate(entity)}>
+                    <strong>{data[entity].length.toLocaleString()}</strong>
+                    <span>{label}</span>
+                    <ArrowRight size={16} />
                   </button>
-                </div>
-                <div className="welcome-mark" aria-hidden="true">
-                  <BookOpen strokeWidth={0.65} />
-                  <span>Learning, together.</span>
-                </div>
-                <div className="school-totals">
-                  <button onClick={() => navigate("students")}>
-                    <span>
-                      Students
-                      <Users size={16} />
-                    </span>
-                    <strong>{data.students.length.toLocaleString()}</strong>
-                    <small>People with potential</small>
-                  </button>
-                  <button onClick={() => navigate("teachers")}>
-                    <span>
-                      Teachers
-                      <UserRound size={16} />
-                    </span>
-                    <strong>{data.teachers.length}</strong>
-                    <small>Here to inspire</small>
-                  </button>
-                  <button onClick={() => navigate("courses")}>
-                    <span>
-                      Courses
-                      <BookOpen size={16} />
-                    </span>
-                    <strong>{data.courses.length}</strong>
-                    <small>Paths to explore</small>
-                  </button>
-                </div>
+                ))}
               </section>
               <div className="overview-grid">
                 <AttendanceChart
@@ -670,93 +683,95 @@ export default function App() {
                   onOpen={() => navigate("attendance")}
                 />
                 <Schedule data={data} onOpen={() => navigate("courses")} />
-              </div>
-              <section className="panel enrollment-panel">
-                <div className="panel-heading">
-                  <div>
-                    <h2>Recent enrollments</h2>
-                    <p>The next chapter starts here.</p>
-                  </div>
-                  <button
-                    className="text-button"
-                    onClick={() => navigate("registrations")}
-                  >
-                    View all <ArrowRight size={16} />
-                  </button>
-                </div>
-                <div className="table-scroll">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Student</th>
-                        <th>Course</th>
-                        <th>Enrolled on</th>
-                        <th>Grade</th>
-                        <th>
-                          <span className="sr-only">Actions</span>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {[...data.registrations]
-                        .reverse()
-                        .slice(0, 4)
-                        .map((row, index) => (
-                          <tr key={row.RegistrationID}>
-                            <td>
-                              {student(row.StudentID)
-                                ? personCell(
-                                    student(row.StudentID)!,
-                                    "Student",
-                                    index,
-                                  )
-                                : "Unknown student"}
-                            </td>
-                            <td>{course(row.CourseID)?.CourseTitle}</td>
-                            <td className="nowrap">
-                              {readableDate(row.RegistrationDate)}
-                            </td>
-                            <td>
-                              <Badge
-                                tone={row.Grade === "A" ? "green" : "neutral"}
-                              >
-                                {row.Grade === "N/A" ? "Not graded" : row.Grade}
-                              </Badge>
-                            </td>
-                            <td>
-                              <button
-                                className="icon-button"
-                                aria-label={`Edit enrollment ${row.RegistrationID}`}
-                                onClick={() => edit("registrations", row)}
-                              >
-                                <ArrowRight size={17} />
-                              </button>
-                            </td>
-                          </tr>
-                        ))}
-                    </tbody>
-                  </table>
-                  {!data.registrations.length && (
-                    <div className="empty-state compact">
-                      <GraduationCap />
-                      <h3>No enrollments yet</h3>
-                      <p>Give your first student a place to start.</p>
-                      <button
-                        className="primary-button"
-                        onClick={() => edit("registrations")}
-                      >
-                        New enrollment
-                      </button>
+                <section className="panel enrollment-panel">
+                  <div className="panel-heading">
+                    <div>
+                      <h2>Recent enrollments</h2>
+                      <p>Latest course registrations</p>
                     </div>
-                  )}
-                </div>
-              </section>
+                    <button
+                      className="text-button"
+                      onClick={() => navigate("registrations")}
+                    >
+                      View all <ArrowRight size={16} />
+                    </button>
+                  </div>
+                  <div className="table-scroll">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Student</th>
+                          <th>Course</th>
+                          <th>Enrolled on</th>
+                          <th>Grade</th>
+                          <th>
+                            <span className="sr-only">Actions</span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[...data.registrations]
+                          .reverse()
+                          .slice(0, 4)
+                          .map((row, index) => (
+                            <tr key={row.RegistrationID}>
+                              <td>
+                                {student(row.StudentID)
+                                  ? personCell(
+                                      student(row.StudentID)!,
+                                      "Student",
+                                      index,
+                                    )
+                                  : "Unknown student"}
+                              </td>
+                              <td>{course(row.CourseID)?.CourseTitle}</td>
+                              <td className="nowrap">
+                                {readableDate(row.RegistrationDate)}
+                              </td>
+                              <td>
+                                <Badge
+                                  tone={row.Grade === "A" ? "green" : "neutral"}
+                                >
+                                  {row.Grade === "N/A"
+                                    ? "Not graded"
+                                    : row.Grade}
+                                </Badge>
+                              </td>
+                              <td>
+                                <button
+                                  className="icon-button"
+                                  aria-label={`Edit enrollment ${row.RegistrationID}`}
+                                  onClick={() => edit("registrations", row)}
+                                >
+                                  <ArrowRight size={17} />
+                                </button>
+                              </td>
+                            </tr>
+                          ))}
+                      </tbody>
+                    </table>
+                    {!data.registrations.length && (
+                      <div className="empty-state compact">
+                        <GraduationCap />
+                        <h3>No enrollments yet</h3>
+                        <p>Register a student in a course to get started.</p>
+                        <button
+                          className="primary-button"
+                          onClick={() => edit("registrations")}
+                        >
+                          New enrollment
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </section>
+              </div>
               <div className="day-note">
                 <span>
                   <CheckCheck size={17} />
                   {todayAttendance.length
                     ? `${todayAttendance.length} attendance entries today · ${presentRate}% present`
-                    : "A fresh day. Attendance is ready when you are."}
+                    : "No attendance recorded today."}
                 </span>
                 <button onClick={() => edit("attendance")}>
                   Mark attendance <ArrowRight size={15} />
@@ -774,7 +789,7 @@ export default function App() {
                   <span className="count-tag">{data[page].length}</span>
                 </div>
                 <span className="directory-note">
-                  A place for every detail.
+                  Records stay in sync across your workspace.
                 </span>
               </div>
               <div className="table-toolbar">
@@ -942,10 +957,12 @@ export default function App() {
             </section>
           )}
           <footer className="page-footer">
-            <span>Made for the everyday work of a school.</span>
+            <span>Schoolhouse / Administration</span>
             <span>
               <span className="footer-dot" />
-              {data.demo ? "Local demo" : "MySQL workspace"}
+              {data.demo
+                ? "Sample workspace"
+                : `${data.storage === "mysql" ? "MySQL" : "SQLite"} workspace`}
               <span className="footer-separator">/</span>Schoolhouse
             </span>
           </footer>
@@ -1009,7 +1026,7 @@ function AttendanceChart({
     <section className="panel attendance-panel">
       <div className="panel-heading">
         <div>
-          <h2>Showing up, together.</h2>
+          <h2>Attendance</h2>
           <p>Attendance over the last seven days</p>
         </div>
         <button
@@ -1025,13 +1042,23 @@ function AttendanceChart({
           {total ? Math.round((totalPresent / total) * 100) + "%" : "—"}
         </strong>
         <span>
-          Present, on average
+          Average present rate
           <span className="secondary-line">{total} recorded check-ins</span>
         </span>
-        <Badge tone="green">
-          <span className="status-dot" />
-          Present
-        </Badge>
+        <div className="chart-legend">
+          <span>
+            <i className="legend-present" />
+            Present
+          </span>
+          <span>
+            <i className="legend-late" />
+            Late
+          </span>
+          <span>
+            <i className="legend-absent" />
+            Absent
+          </span>
+        </div>
       </div>
       <div
         className="attendance-chart"
@@ -1053,6 +1080,18 @@ function AttendanceChart({
               <span
                 className="bar-fill"
                 style={{ height: `${day.rate ?? 0}%` }}
+              />
+              <span
+                className="bar-late"
+                style={{
+                  height: `${day.rows.length ? (day.rows.filter((r) => r.AttendanceStatus === "Late").length / day.rows.length) * 100 : 0}%`,
+                }}
+              />
+              <span
+                className="bar-absent"
+                style={{
+                  height: `${day.rows.length ? (day.rows.filter((r) => r.AttendanceStatus === "Absent").length / day.rows.length) * 100 : 0}%`,
+                }}
               />
             </span>
             <span className="bar-label">
@@ -1089,6 +1128,20 @@ function Schedule({ data, onOpen }: { data: SchoolData; onOpen: () => void }) {
     ],
     todayDay = new Date().toLocaleDateString("en-US", { weekday: "long" });
   const [selected, setSelected] = useState(todayDay);
+  const weekStart = new Date();
+  weekStart.setDate(weekStart.getDate() - ((weekStart.getDay() + 6) % 7));
+  const weekDates = weekdays.map((_, index) => {
+    const day = new Date(weekStart);
+    day.setDate(day.getDate() + index);
+    return day;
+  });
+  const weeklyCourses = [...data.courses].sort(
+    (a, b) =>
+      weekdays.indexOf(String(a.ClassDay)) -
+        weekdays.indexOf(String(b.ClassDay)) ||
+      String(a.ClassTime).localeCompare(String(b.ClassTime)),
+  );
+
   const scheduled = data.courses
     .filter((r) => r.ClassDay === selected)
     .sort((a, b) => String(a.ClassTime).localeCompare(String(b.ClassTime)));
@@ -1096,8 +1149,8 @@ function Schedule({ data, onOpen }: { data: SchoolData; onOpen: () => void }) {
     <section className="panel schedule-panel">
       <div className="panel-heading">
         <div>
-          <h2>The week in motion</h2>
-          <p>A little structure. A lot of possibility.</p>
+          <h2>Timetable</h2>
+          <p>Weekly course schedule</p>
         </div>
         <CalendarDays size={19} className="muted" />
       </div>
@@ -1126,8 +1179,10 @@ function Schedule({ data, onOpen }: { data: SchoolData; onOpen: () => void }) {
             key={day}
             onClick={() => setSelected(day)}
           >
-            {day.slice(0, 1)}
-            <span className="sr-only">{day.slice(1)}</span>
+            <span className="weekday-label">{day.slice(0, 3)}</span>
+            <span className="weekday-date">
+              {weekDates[weekdays.indexOf(day)].getDate()}
+            </span>
             <span className={day === todayDay ? "today-marker" : ""} />
           </button>
         ))}
@@ -1159,7 +1214,7 @@ function Schedule({ data, onOpen }: { data: SchoolData; onOpen: () => void }) {
         {!scheduled.length && (
           <div className="schedule-empty">
             <BookOpen size={26} strokeWidth={1.3} />
-            <strong>A little breathing room.</strong>
+            <strong>No classes today</strong>
             <span>No classes scheduled for {selected}.</span>
           </div>
         )}
@@ -1167,8 +1222,24 @@ function Schedule({ data, onOpen }: { data: SchoolData; onOpen: () => void }) {
           <span className="muted">+{scheduled.length - 3} more classes</span>
         )}
       </div>
+      <div className="week-course-list">
+        <h3>Across the week</h3>
+        {weeklyCourses.slice(0, 6).map((row) => (
+          <div
+            className={`week-course ${row.ClassDay === selected ? "on-selected-day" : ""}`}
+            key={row.CourseID}
+          >
+            <span>
+              {String(row.ClassDay).slice(0, 3)}
+              <small>{String(row.ClassTime).slice(0, 5)}</small>
+            </span>
+            <strong>{row.CourseTitle}</strong>
+            <span className="week-course-room">{row.Classroom}</span>
+          </div>
+        ))}
+      </div>
       <button className="schedule-footer" onClick={onOpen}>
-        Explore all courses <ArrowRight size={16} />
+        View all courses <ArrowRight size={16} />
       </button>
     </section>
   );

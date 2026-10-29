@@ -1,4 +1,17 @@
 import { test, expect } from "@playwright/test";
+import { randomUUID } from "node:crypto";
+
+test.beforeEach(async ({ page }) => {
+  const registered = await page.request.post("/api/auth/register", {
+    data: {
+      name: "Browser Administrator",
+      email: `${randomUUID()}@schoolhouse.example`,
+      password: "Browser-tests-password-2026!",
+      sample_data: true,
+    },
+  });
+  expect(registered.status()).toBe(201);
+});
 
 test("student lifecycle persists, searches and deletes", async ({
   page,
@@ -42,11 +55,9 @@ test("overview, schedule and mobile navigation are usable", async ({
 }, testInfo) => {
   await page.goto("/");
   await expect(
-    page.getByRole("heading", { name: "Your school, at a glance." }),
+    page.getByRole("heading", { name: "School overview" }),
   ).toBeVisible();
-  await expect(
-    page.getByRole("heading", { name: "Showing up, together." }),
-  ).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Attendance" })).toBeVisible();
   await page.getByRole("tab", { name: "Sunday", exact: true }).click();
   await expect(page.getByRole("tabpanel")).toContainText(
     "No classes scheduled for Sunday.",

@@ -11,6 +11,8 @@ from flask import Flask, g, jsonify, request, send_from_directory, Response
 from werkzeug.exceptions import HTTPException
 from dotenv import load_dotenv
 from backend.database import Database
+from backend.auth import AuthStore
+from backend.auth_routes import install_auth
 
 load_dotenv()
 ENTITIES = {
@@ -56,11 +58,35 @@ def serial(value):
 def create_app(database_path=None):
     app = Flask(__name__, static_folder=None)
     app.config["MAX_CONTENT_LENGTH"] = 64 * 1024
+    # Tests derive an isolated account store from their explicit database path.
+    state_dir = (
+        Path(database_path).parent / (Path(database_path).stem + "-state")
+        if database_path
+        else Path(os.getenv("SCHOOL_STATE_DIR", str(Path(__file__).with_name("state"))))
+    )
+    app.config.update(
+        AUTH_DATABASE=str(state_dir / "accounts.db"),
+        WORKSPACES_DIR=str(state_dir / "workspaces"),
+        AUTH_COOKIE_SECURE=os.getenv("SCHOOL_COOKIE_SECURE", "false").lower() == "true",
+    )
+    state_dir.mkdir(parents=True, exist_ok=True, mode=0o700)
+    Path(app.config["WORKSPACES_DIR"]).mkdir(parents=True, exist_ok=True, mode=0o700)
+    auth = AuthStore(app.config["AUTH_DATABASE"])
+    auth.close()
+    install_auth(app)
+
     dist = Path(__file__).resolve().parents[1] / "frontend" / "dist"
 
     def db():
         if "db" not in g:
-            g.db = Database(database_path)
+            account = g.account
+            if account["WorkspaceKind"] == "mysql":
+                g.db = Database(mysql=True)
+            else:
+                workspace = (
+                    Path(app.config["WORKSPACES_DIR"]) / f"{account['AccountID']}.db"
+                )
+                g.db = Database(str(workspace), mysql=False)
         return g.db
 
     @app.teardown_appcontext
@@ -78,12 +104,7 @@ def create_app(database_path=None):
 
     @app.get("/api/health")
     def health():
-        db().rows("SELECT 1 AS ok")
-        return jsonify(
-            status="ok",
-            storage="mysql" if db().mysql else "sqlite",
-            demo=not db().mysql,
-        )
+        return jsonify(status="ok", storage="sqlite", authentication="required")
 
     @app.get("/api/data")
     def data():
@@ -93,7 +114,8 @@ def create_app(database_path=None):
                 {k: serial(v) for k, v in row.items()}
                 for row in db().rows(f"SELECT * FROM {table} ORDER BY {pk}")
             ]
-        result["demo"] = not db().mysql
+        result["demo"] = bool(g.account["SampleData"])
+        result["storage"] = "mysql" if db().mysql else "sqlite"
         return jsonify(result)
 
     def validate(entity, payload, editing=False):
@@ -299,8 +321,6 @@ def create_app(database_path=None):
             return send_from_directory(dist, path)
         return send_from_directory(dist, "index.html")
 
-    with app.app_context():
-        db().seed()
     return app
 
 

@@ -2,7 +2,10 @@ export type Entity =
   "students" | "teachers" | "courses" | "registrations" | "attendance";
 export type Page = "overview" | Entity;
 export type Row = Record<string, string | number>;
-export type SchoolData = Record<Entity, Row[]> & { demo: boolean };
+export type SchoolData = Record<Entity, Row[]> & {
+  demo: boolean;
+  storage: "sqlite" | "mysql";
+};
 export const emptyData: SchoolData = {
   students: [],
   teachers: [],
@@ -10,6 +13,7 @@ export const emptyData: SchoolData = {
   registrations: [],
   attendance: [],
   demo: true,
+  storage: "sqlite",
 };
 export const primaryKeys: Record<Entity, string> = {
   students: "StudentID",

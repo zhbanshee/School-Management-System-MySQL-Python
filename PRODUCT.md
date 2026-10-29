@@ -14,10 +14,10 @@ School administrators managing students, teachers, courses, registrations, grade
 Extend the existing Python CLI and relational database into a usable full-stack school management application, with an English interface suitable for an international portfolio.
 
 ## Capabilities and Constraints
-Preserve the existing five-entity relational model. Provide CRUD, registration, grading, attendance, search and export. Demo records must be labeled fictional. No authentication or production deployment is established by the original repository.
+Preserve the existing five-entity relational model. Provide CRUD, registration, grading, attendance, search and export. Demo records must be labeled fictional. The web application now includes registration, sign-in/out, hashed passwords, server-side sessions, CSRF protection, attempt limits and isolated per-account SQLite workspaces. Existing MySQL access is assigned only through local provisioning. Shared staff roles, email verification, password recovery and production hosting are not implemented.
 
 ## Brand Commitments
-The user requests a beautiful, human-designed interface and explicitly requests Impeccable. Interface language and proposed workflows were confirmed in chat.
+The user requests a modern, creative, human-designed interface and explicitly requests Impeccable. The original green serif dashboard was rejected as too template-like. The user selected Campus Atelier and required Tiffany blue instead of orange. Interface language and proposed workflows were confirmed in chat.
 
 ## Evidence on Hand
-Python CLI, models, MySQL schema and technical report. No existing frontend or visual brand. Portfolio claims must distinguish original repository work from new work and must not fabricate outcomes.
+Python CLI, models, MySQL schema and technical report. The original Python/MySQL project is the user’s own work. This repository now has a React frontend and Flask API. Portfolio claims must describe the implementation accurately without fabricating outcomes.

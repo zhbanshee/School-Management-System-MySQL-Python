@@ -10,7 +10,19 @@ from backend.app import create_app
 def client(tmp_path):
     app = create_app(str(tmp_path / "test.db"))
     app.config.update(TESTING=True)
-    return app.test_client()
+    client = app.test_client()
+    registered = client.post(
+        "/api/auth/register",
+        json={
+            "name": "Test administrator",
+            "email": "admin@example.com",
+            "password": "Schoolhouse-tests-2026!",
+            "sample_data": True,
+        },
+    )
+    assert registered.status_code == 201
+    client.environ_base["HTTP_X_CSRF_TOKEN"] = registered.json["csrf_token"]
+    return client
 
 
 def new_student(**overrides):
@@ -159,8 +171,25 @@ def test_empty_demo_stays_empty_on_restart(tmp_path):
     path = str(tmp_path / "empty.db")
     app = create_app(path)
     client = app.test_client()
+    registered = client.post(
+        "/api/auth/register",
+        json={
+            "name": "Test administrator",
+            "email": "admin@example.com",
+            "password": "Schoolhouse-tests-2026!",
+            "sample_data": True,
+        },
+    )
+    client.environ_base["HTTP_X_CSRF_TOKEN"] = registered.json["csrf_token"]
     data = client.get("/api/data").json
     for row in data["students"]:
         client.delete(f"/api/students/{row['StudentID']}")
     restarted = create_app(path).test_client()
+    assert (
+        restarted.post(
+            "/api/auth/login",
+            json={"email": "admin@example.com", "password": "Schoolhouse-tests-2026!"},
+        ).status_code
+        == 200
+    )
     assert restarted.get("/api/data").json["students"] == []

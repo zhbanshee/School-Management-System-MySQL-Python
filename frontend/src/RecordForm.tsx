@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { X, Save, LoaderCircle, Trash2 } from "lucide-react";
+import { apiFetch } from "./api";
 import {
   type Entity,
   type Row,
@@ -143,7 +144,7 @@ export default function RecordForm({
       new FormData(event.currentTarget).entries(),
     );
     try {
-      const result = await fetch(
+      const result = await apiFetch(
         `/api/${entity}${record ? `/${record[pk]}` : ""}`,
         {
           method: record ? "PUT" : "POST",
@@ -172,7 +173,7 @@ export default function RecordForm({
     setBusy(true);
     setError("");
     try {
-      const result = await fetch(`/api/${entity}/${record![pk]}`, {
+      const result = await apiFetch(`/api/${entity}/${record![pk]}`, {
         method: "DELETE",
       });
       const response = await result.json();
@@ -206,7 +207,7 @@ export default function RecordForm({
           <p>
             {record
               ? `Record #${record[pk]} · Keep your school records up to date.`
-              : "A little detail now. A more connected school day."}
+              : "Complete the details below to create a record."}
           </p>
         </div>
         <button
@@ -225,6 +226,7 @@ export default function RecordForm({
             <label
               key={field.key}
               className={
+                field.key === pk ||
                 field.key.endsWith("Email") ||
                 field.key === "CourseTitle" ||
                 field.key === "RegistrationID"
